@@ -10,27 +10,22 @@ public class CargoDisplay implements Observer, DisplayElement {
     private String address;
     private String location;
 
-    public CargoDisplay(Observable obs)
-    {
+    public CargoDisplay(Observable obs) {
         obs.addObserver(this);
     }
 
-    public void update(Observable obs, Object obj)
-    {
-        if(obs instanceof CargoData)
-        {
+    public void update(Observable obs, Object obj) {
+        if(obs instanceof CargoData) {
             CargoData cd = (CargoData)obs;
-            cargoNumber = cd.GetCargoNumber();
-            description = cd.GetDescription();
-            address = cd.GetAddress();
-            location = cd.GetLocation();
+            cargoNumber = cd.getCargoNumber();
+            description = cd.getDescription();
+            address = cd.getAddress();
+            location = cd.getLocation();
         }
-
-        Display();
+        display();
     }
 
-    public void Display()
-    {
+    public void display() {
         System.out.println("ABOUT THE CARGO");
         System.out.println("-Cargo Number: " + cargoNumber);
         System.out.println("-Cargo Description: " + description);

@@ -1,9 +1,8 @@
 package com.JavaTest;
 
-import Observer.CargoData;
-import Observer.CargoDisplay;
-import Observer.TrackCargoDisplay;
 import Strategy.*;
+import Observer.*;
+import Decorator.*;
 
 public class Main
 {
@@ -14,16 +13,17 @@ public class Main
         Airplane A400M = new A400M();
         Airplane F35LII = new F35LII();
 
-        A400M.TakeOff();
-        A400M.Fly();
-        A400M.Land();
+        A400M.takeOff();
+        A400M.fly();
+        A400M.land();
 
-        F35LII.TakeOff();
-        F35LII.Fly();
-        F35LII.Land();
+        F35LII.takeOff();
+        F35LII.fly();
+        F35LII.land();
         */
 
         //TEST OBSERVER PATTERN
+        /*
         CargoData cargoData = new CargoData("12A123d",
                 "Blue Note6 Case",
                 "12/A London, UK",
@@ -32,9 +32,20 @@ public class Main
         TrackCargoDisplay tcd = new TrackCargoDisplay(cargoData);
         CargoDisplay cd = new CargoDisplay(cargoData);
 
-        cargoData.SetLocation("Esenboga Airport, Turkey");
-        cargoData.SetLocation("London City Airport, UK");
-        cargoData.SetLocation("12/A London, UK");
-        cargoData.SetIsArrived(true);
+        cargoData.setLocation("Esenboga Airport, Turkey");
+        cargoData.setLocation("London City Airport, UK");
+        cargoData.setLocation("12/A London, UK");
+        cargoData.setIsArrived(true);
+        */
+
+        //TEST DECORATOR PATTERN
+        Pizza med = new MediumMenuPizza();
+        med = new ExtraMozzarella(med);
+        System.out.println(med.getDescription() + " ₺" + med.cost());
+
+        Pizza big = new BigMenuPizza();
+        big = new ExtraMozzarella(big);
+        big = new PizzaSauce(big);
+        System.out.println(big.getDescription() + " ₺" + big.cost());
     }
 }

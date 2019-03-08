@@ -1,40 +1,33 @@
 package Strategy;
 
-public class Airplane
-{
+public class Airplane {
     private FlyBehavior flyBehavior;
     private LandingBehavior landingBehavior;
     private TakeOffBehavior takeOffBehavior;
 
     //Airplane Methods
-    public void Fly()
-    {
-        flyBehavior.Fly();
+    public void fly() {
+        flyBehavior.fly();
     }
 
-    public void TakeOff()
-    {
-        takeOffBehavior.TakeOff();
+    public void takeOff() {
+        takeOffBehavior.takeOff();
     }
 
-    public void Land()
-    {
-        landingBehavior.Land();
+    public void land() {
+        landingBehavior.land();
     }
 
     //Behavior Setters
-    public void SetFlyBehavior(FlyBehavior fb)
-    {
+    public void setFlyBehavior(FlyBehavior fb) {
         flyBehavior = fb;
     }
 
-    public void SetLandingBehavior(LandingBehavior lb)
-    {
+    public void setLandingBehavior(LandingBehavior lb) {
         landingBehavior = lb;
     }
 
-    public void SetTakeOffBehavior(TakeOffBehavior tb)
-    {
+    public void setTakeOffBehavior(TakeOffBehavior tb) {
         takeOffBehavior = tb;
     }
 }

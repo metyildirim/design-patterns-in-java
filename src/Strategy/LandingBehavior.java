@@ -1,6 +1,5 @@
 package Strategy;
 
-public interface LandingBehavior
-{
-    void Land();
+public interface LandingBehavior {
+    void land();
 }

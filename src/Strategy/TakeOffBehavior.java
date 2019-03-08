@@ -1,6 +1,5 @@
 package Strategy;
 
-public interface TakeOffBehavior
-{
-    void TakeOff();
+public interface TakeOffBehavior {
+    void takeOff();
 }

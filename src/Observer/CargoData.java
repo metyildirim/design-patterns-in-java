@@ -2,16 +2,14 @@ package Observer;
 
 import java.util.Observable;
 
-public class CargoData extends Observable
-{
+public class CargoData extends Observable {
     private String cargoNumber;
     private String description;
     private String address;
     private String location;
     private boolean isArrived;
 
-    public CargoData(String cargoNumber, String description, String address, String location)
-    {
+    public CargoData(String cargoNumber, String description, String address, String location) {
         this.cargoNumber = cargoNumber;
         this.description = description;
         this.address = address;
@@ -19,54 +17,45 @@ public class CargoData extends Observable
         isArrived = false;
     }
 
-    private void LocationChanged()
-    {
+    private void locationChanged() {
         setChanged();
         notifyObservers();
     }
 
-    private void IsArrivedChanged()
-    {
+    private void isArrivedChanged() {
         setChanged();
         notifyObservers();
     }
 
     //Setters
-    public void SetLocation(String location)
-    {
+    public void setLocation(String location) {
         this.location = location;
-        LocationChanged();
+        locationChanged();
     }
 
-    public void SetIsArrived(Boolean isArrived)
-    {
+    public void setIsArrived(Boolean isArrived) {
         this.isArrived = isArrived;
-        IsArrivedChanged();
+        isArrivedChanged();
     }
 
     //Getters
-    public String GetCargoNumber()
-    {
+    public String getCargoNumber() {
         return cargoNumber;
     }
 
-    public String GetDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
-    public String GetAddress()
-    {
+    public String getAddress() {
         return address;
     }
 
-    public String GetLocation()
-    {
+    public String getLocation() {
         return location;
     }
 
-    public boolean GetIsArrived()
-    {
+    public boolean getIsArrived() {
         return isArrived;
     }
 }

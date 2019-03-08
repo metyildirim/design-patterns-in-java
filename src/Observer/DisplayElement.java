@@ -1,6 +1,5 @@
 package Observer;
 
-public interface DisplayElement
-{
-    public void Display();
+public interface DisplayElement {
+    public void display();
 }
