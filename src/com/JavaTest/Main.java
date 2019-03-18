@@ -3,6 +3,7 @@ package com.JavaTest;
 import Strategy.*;
 import Observer.*;
 import Decorator.*;
+import Factory.*;
 
 public class Main
 {
@@ -38,6 +39,7 @@ public class Main
         cargoData.setIsArrived(true);
         */
 
+        /*
         //TEST DECORATOR PATTERN
         Pizza med = new MediumMenuPizza();
         med = new ExtraMozzarella(med);
@@ -47,5 +49,15 @@ public class Main
         big = new ExtraMozzarella(big);
         big = new PizzaSauce(big);
         System.out.println(big.getDescription() + " ₺" + big.cost());
+        */
+
+        //TEST FACTORY PATTERN
+        MarasIceCreamStore Mstore = new MarasIceCreamStore();
+        AnkaraIceCreamStore Astore = new AnkaraIceCreamStore();
+
+        IceCream a1 = Mstore.orderIceCream("Milky");
+        IceCream a2 = Astore.orderIceCream("Milky");
+        IceCream b1 = Mstore.orderIceCream("Rocky Road");
+        IceCream b2 = Astore.orderIceCream("Rocky Road");
     }
 }
