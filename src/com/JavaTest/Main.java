@@ -4,6 +4,7 @@ import Strategy.*;
 import Observer.*;
 import Decorator.*;
 import Factory.*;
+import Singleton.*;
 
 public class Main
 {
@@ -51,6 +52,7 @@ public class Main
         System.out.println(big.getDescription() + " ₺" + big.cost());
         */
 
+        /*
         //TEST FACTORY PATTERN
         MarasIceCreamStore Mstore = new MarasIceCreamStore();
         AnkaraIceCreamStore Astore = new AnkaraIceCreamStore();
@@ -59,5 +61,15 @@ public class Main
         IceCream a2 = Astore.orderIceCream("Milky");
         IceCream b1 = Mstore.orderIceCream("Rocky Road");
         IceCream b2 = Astore.orderIceCream("Rocky Road");
+        */
+
+        //TEST SINGLETON PATTERN
+        CoffeeBoiler boiler = CoffeeBoiler.getInstance();
+        boiler.fill();
+        boiler.boil();
+        boiler.drain();
+
+        // will return the existing instance
+        CoffeeBoiler boiler2 = CoffeeBoiler.getInstance();
     }
 }
